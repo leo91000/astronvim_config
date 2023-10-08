@@ -54,6 +54,17 @@ return {
     servers = {
       -- "pyright"
     },
+    config = {
+      eslint = {
+        ---@diagnostic disable-next-line: unused-local
+        on_attach = function(client, bufnr)
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            command = "EslintFixAll",
+          })
+        end,
+      },
+    },
   },
 
   -- Configure require("lazy").setup() options
