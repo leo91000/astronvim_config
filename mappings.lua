@@ -6,17 +6,29 @@
 return {
   -- first key is the mode
   n = {
-    -- second key is the lefthand side of the map
+    -- Git
+    ['<leader>gk'] = { 
+      function() vim.cmd('Git push') end, 
+      desc = "Git push" 
+    },
+    ['<leader>gF'] = { 
+      function() vim.cmd('Git push --force-with-lease') end, 
+      desc = "Git push (force with lease)" 
+    },
+    ['<leader>gK'] = { 
+      function() vim.cmd('Git pull') end, 
+      desc = "Git pull" 
+    },
 
     -- navigate buffer tabs with `H` and `L`
-    -- L = {
-    --   function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
-    --   desc = "Next buffer",
-    -- },
-    -- H = {
-    --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
-    --   desc = "Previous buffer",
-    -- },
+    L = {
+      function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+      desc = "Next buffer",
+    },
+    H = {
+      function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+      desc = "Previous buffer",
+    },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {

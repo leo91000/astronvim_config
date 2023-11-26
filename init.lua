@@ -27,6 +27,12 @@ return {
   },
 
   lsp = {
+    mappings = {
+      n = {
+        ['<leader>dn'] = { function() vim.diagnostic.goto_next() end, desc = "Go to next diagnostic" },
+        ['<leader>dp'] = { function() vim.diagnostic.goto_prev() end, desc = "Go to previous diagnostic" },
+      }
+    },
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
@@ -51,7 +57,7 @@ return {
       -- end
     },
     -- enable servers that you already have installed without mason
-    servers = {
+    servers = { 
       -- "pyright"
     },
     config = {
