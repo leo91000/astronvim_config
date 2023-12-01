@@ -2,17 +2,17 @@ return {
   -- first key is the mode
   n = {
     -- Git
-    ['<leader>gk'] = { 
-      function() vim.cmd('Git push') end, 
-      desc = "Git push" 
+    ["<leader>gk"] = {
+      function() vim.cmd "Git push" end,
+      desc = "Git push",
     },
-    ['<leader>gF'] = { 
-      function() vim.cmd('Git push --force-with-lease') end, 
-      desc = "Git push (force with lease)" 
+    ["<leader>gF"] = {
+      function() vim.cmd "Git push --force-with-lease" end,
+      desc = "Git push (force with lease)",
     },
-    ['<leader>gK'] = { 
-      function() vim.cmd('Git pull') end, 
-      desc = "Git pull --rebase" 
+    ["<leader>gK"] = {
+      function() vim.cmd "Git pull" end,
+      desc = "Git pull --rebase",
     },
 
     -- navigate buffer tabs with `H` and `L`
