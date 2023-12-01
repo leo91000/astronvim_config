@@ -17,5 +17,7 @@ return {
       "vue",
       "svelte",
     })
+
+    opts.compilers = { "zig" }
   end,
 }

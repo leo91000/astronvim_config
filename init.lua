@@ -29,16 +29,16 @@ return {
   lsp = {
     mappings = {
       n = {
-        ['<leader>dn'] = { function() vim.diagnostic.goto_next() end, desc = "Go to next diagnostic" },
-        ['<leader>dp'] = { function() vim.diagnostic.goto_prev() end, desc = "Go to previous diagnostic" },
-      }
+        ["<leader>dn"] = { function() vim.diagnostic.goto_next() end, desc = "Go to next diagnostic" },
+        ["<leader>dp"] = { function() vim.diagnostic.goto_prev() end, desc = "Go to previous diagnostic" },
+      },
     },
     formatting = {
       format_on_save = {
         enabled = true,
         ignore_filetypes = {
           "vue",
-          "ts"
+          "ts",
         },
       },
       timeout_ms = 1000, -- default format timeout
@@ -75,20 +75,5 @@ return {
   },
 
   -- This function is run last and is a good place to configuring
-  -- augroups/autocommands and custom filetypes also this just pure lua so
-  -- anything that doesn't fit in the normal config locations above can go here
-  polish = function()
-    -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
-  end,
+  polish = function() require("nvim-treesitter.install").compilers = { "zig" } end,
 }
