@@ -16,6 +16,7 @@ return {
       "tsx",
       "vue",
       "svelte",
+      "prisma",
     })
 
     opts.compilers = { "zig" }
