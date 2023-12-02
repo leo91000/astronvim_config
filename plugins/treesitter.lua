@@ -15,7 +15,7 @@ return {
       "bash",
       "tsx",
       "vue",
-      "svelte",
+      -- "svelte",
       "prisma",
     })
 
