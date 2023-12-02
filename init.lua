@@ -75,5 +75,8 @@ return {
   },
 
   -- This function is run last and is a good place to configuring
-  polish = function() require("nvim-treesitter.install").compilers = { "zig" } end,
+  polish = function()
+    -- Change the default compiler for treesitter
+    -- require("nvim-treesitter.install").compilers = { vim.NIL, "cc", "gcc", "clang", "cl", "zig" }
+  end,
 }
