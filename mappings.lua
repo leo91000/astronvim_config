@@ -42,7 +42,7 @@ return {
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
 
-    ["F9"] = { ":LspRestart", desc = "Restart LSPs" },
+    ["<F9>"] = { ":LspRestart", desc = "Restart LSPs" },
   },
 
   -- Insert mode
