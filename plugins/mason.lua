@@ -24,6 +24,7 @@ return {
         "bashls",
         "prismals",
         "sqlls",
+        "zls",
       })
     end,
   },

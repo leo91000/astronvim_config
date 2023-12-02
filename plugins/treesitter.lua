@@ -17,8 +17,8 @@ return {
       "vue",
       -- "svelte",
       "prisma",
+      "svelte",
+      "zig",
     })
-
-    opts.compilers = { "zig" }
   end,
 }
