@@ -31,6 +31,10 @@ return {
       n = {
         ["<leader>dn"] = { function() vim.diagnostic.goto_next() end, desc = "Go to next diagnostic" },
         ["<leader>dp"] = { function() vim.diagnostic.goto_prev() end, desc = "Go to previous diagnostic" },
+        ["<C-d>"] = { "<C-d>zz", desc = "Scroll down 1/2 page" },
+        ["<C-u>"] = { "<C-u>zz", desc = "Scroll up 1/2 page" },
+        ["<C-f>"] = { "<C-f>zz", desc = "Scroll down 1 page" },
+        ["<C-b>"] = { "<C-b>zz", desc = "Scroll up 1 page" },
       },
     },
     formatting = {
@@ -78,5 +82,6 @@ return {
   polish = function()
     -- Change the default compiler for treesitter
     -- require("nvim-treesitter.install").compilers = { vim.NIL, "cc", "gcc", "clang", "cl", "zig" }
+    vim.o.scrolloff = 7
   end,
 }
