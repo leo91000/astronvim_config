@@ -25,6 +25,7 @@ return {
         "prismals",
         "sqlls",
         "zls",
+        "tsserver",
       })
     end,
   },
