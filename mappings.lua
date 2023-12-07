@@ -14,6 +14,10 @@ return {
       function() vim.cmd "Git pull" end,
       desc = "Git pull --rebase",
     },
+
+    -- Scroll
+    ["<C-e>"] = { "<C-e>zz", desc = "Scroll down 1 line" },
+    ["<C-y>"] = { "<C-y>zz", desc = "Scroll up 1 line" },
     ["<C-d>"] = { "<C-d>zz", desc = "Scroll down 1/2 page" },
     ["<C-u>"] = { "<C-u>zz", desc = "Scroll up 1/2 page" },
     ["<C-f>"] = { "<C-f>zz", desc = "Scroll down 1 page" },
