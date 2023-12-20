@@ -42,6 +42,7 @@ return {
         "shellcheck",
         "hadolint",
         "ruff",
+        "rustfmt",
       })
     end,
   },
