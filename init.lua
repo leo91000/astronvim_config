@@ -60,6 +60,17 @@ return {
           })
         end,
       },
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            checkOnSave = {
+              allFeatures = true,
+              command = "clippy",
+              extraArgs = { "--no-deps" },
+            },
+          },
+        },
+      },
     },
   },
 
@@ -75,9 +86,5 @@ return {
   },
 
   -- This function is run last and is a good place to configuring
-  polish = function()
-    -- Change the default compiler for treesitter
-    -- require("nvim-treesitter.install").compilers = { vim.NIL, "cc", "gcc", "clang", "cl", "zig" }
-    vim.o.scrolloff = 7
-  end,
+  polish = function() vim.o.scrolloff = 7 end,
 }
