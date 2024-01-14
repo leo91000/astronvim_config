@@ -85,6 +85,10 @@ return {
     },
   },
 
-  -- This function is run last and is a good place to configuring
-  polish = function() vim.o.scrolloff = 7 end,
+  polish = function()
+    vim.filetype.add { extension = { wgsl = "wgsl" } }
+    vim.wo.foldmethod = "expr"
+    vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+    vim.o.foldlevelstart = 99
+  end,
 }

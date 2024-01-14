@@ -19,6 +19,7 @@ return {
       "prisma",
       "svelte",
       "zig",
+      "wgsl",
     })
   end,
 }

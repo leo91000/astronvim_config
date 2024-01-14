@@ -1,12 +1,13 @@
 -- set vim options here (vim.<first_key>.<second_key> = value)
 return {
   opt = {
-    -- set to true or false etc.
-    relativenumber = true, -- sets vim.opt.relativenumber
-    number = true, -- sets vim.opt.number
-    spell = false, -- sets vim.opt.spell
-    signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-    wrap = false, -- sets vim.opt.wrap
+    relativenumber = true,
+    number = true,
+    spell = false,
+    signcolumn = "auto",
+    wrap = false,
+    scrolloff = 7,
+    -- term = "screen-256color",
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
