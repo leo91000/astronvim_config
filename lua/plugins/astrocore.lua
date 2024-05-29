@@ -27,9 +27,7 @@ return {
         wrap = false,
         scrolloff = 6,
       },
-      g = { 
-
-      },
+      g = {},
     },
     -- Mappings can be configured through AstroCore as well.
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
@@ -60,11 +58,11 @@ return {
 
         -- navigate buffer tabs with `H` and `L`
         L = {
-          function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end,
+          "<cmd>bnext<cr>",
           desc = "Next buffer",
         },
         H = {
-          function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
+          "<cmd>bprev<cr>",
           desc = "Previous buffer",
         },
 

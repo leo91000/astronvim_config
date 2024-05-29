@@ -1,4 +1,3 @@
--- Set up custom filetypes
 vim.filetype.add { extension = { wgsl = "wgsl" } }
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
