@@ -10,8 +10,8 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      autoformat = true, -- enable or disable auto formatting on start
-      codelens = true, -- enable/disable codelens refresh on start
+      autoformat = true,   -- enable or disable auto formatting on start
+      codelens = true,     -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
@@ -45,6 +45,19 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+      tsserver = {
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = os.getenv("VUE_TYPESCRIPT_PLUGIN_LOCATION")
+                  or "/home/leoc/.volta/tools/image/packages/@vue/typescript-plugin/lib/node_modules/@vue/typescript-plugin",
+              languages = { "vue", "javascript", "typescript", "typescriptreact", "javascriptreact" },
+            },
+          },
+        },
+        filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" },
+      },
       eslint = {
         ---@diagnostic disable-next-line: unused-local
         on_attach = function(client, bufnr)
@@ -87,31 +100,46 @@ return {
           event = { "CursorHold", "CursorHoldI" },
           -- the rest of the autocmd options (:h nvim_create_autocmd)
           desc = "Document Highlighting",
-          callback = function() vim.lsp.buf.document_highlight() end,
+          callback = function()
+            vim.lsp.buf.document_highlight()
+          end,
         },
         {
           event = { "CursorMoved", "CursorMovedI", "BufLeave" },
           desc = "Document Highlighting Clear",
-          callback = function() vim.lsp.buf.clear_references() end,
+          callback = function()
+            vim.lsp.buf.clear_references()
+          end,
         },
       },
     },
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
-        gl = { function() vim.diagnostic.open_float() end, desc = "Hover diagnostics" },
+        gl = {
+          function()
+            vim.diagnostic.open_float()
+          end,
+          desc = "Hover diagnostics",
+        },
         -- a `cond` key can provided as the string of a server capability to be required to attach, or a function with `client` and `bufnr` parameters from the `on_attach` that returns a boolean
         gD = {
-          function() vim.lsp.buf.declaration() end,
+          function()
+            vim.lsp.buf.declaration()
+          end,
           desc = "Declaration of current symbol",
           cond = "textDocument/declaration",
         },
         ["<leader>dn"] = {
-          function() vim.diagnostic.goto_next { wrap = true } end,
+          function()
+            vim.diagnostic.goto_next({ wrap = true })
+          end,
           desc = "Go to next diagnostic",
         },
         ["<leader>dp"] = {
-          function() vim.diagnostic.goto_prev { wrap = true } end,
+          function()
+            vim.diagnostic.goto_prev({ wrap = true })
+          end,
           desc = "Go to previous diagnostic",
         },
       },
